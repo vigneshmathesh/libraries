@@ -15,6 +15,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run tests
+      - name: Run Python tests
         run: |
           python -m unittest discover
+
+      - name: Verify frontend files
+        run: |
+          test -f frontend/index.html && echo "✅ index.html exists"
+          test -f frontend/script.js && echo "✅ script.js exists"
+          test -f frontend/style.css && echo "✅ style.css exists"
