@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>College Library System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📚 College Library System</h1>
+
+  <input type="text" id="bookInput" placeholder="Enter book name" />
+  <button onclick="addBook()">➕ Add Book</button>
+  <button onclick="issueBook()">📕 Issue Book</button>
+  <button onclick="returnBook()">📗 Return Book</button>
+
+  <h2>📘 Available Books:</h2>
+  <ul id="availableBooks"></ul>
+
+  <h2>📕 Issued Books:</h2>
+  <ul id="issuedBooks"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
