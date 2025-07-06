@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
 
+# ✅ REQUIRED for GitHub Pages Deploy to work
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
@@ -16,11 +22,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run Python tests
         run: |
@@ -40,5 +41,4 @@ jobs:
           path: ./public
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
